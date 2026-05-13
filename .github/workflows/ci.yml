@@ -12,27 +12,21 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-      with:
-        submodules: true
 
     - name: Install dependencies
       run: sudo apt-get update && sudo apt-get install -y cmake build-essential
 
-    - name: Configure CMake
-      run: cmake -S . -B _build
+    - name: Configure CMake with FetchContent
+      run: cmake -H. -B_builds -DBUILD_TESTS=ON
 
     - name: Build
-      run: cmake --build _build
+      run: cmake --build _builds
 
-    - name: Create package
+    - name: Run tests
+      run: cmake --build _builds --target test
+
+    - name: Run demo
       run: |
-        cd _build
-        cpack -G "TGZ"
-        echo "Package created:"
-        ls -la *.tar.gz
-
-    - name: Upload artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: print-package
-        path: _build/*.tar.gz
+        export LOG_PATH=/tmp/log.txt
+        echo "Hello from CI" | ./_builds/demo
+        cat /tmp/log.txt

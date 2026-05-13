@@ -1,0 +1,79 @@
+Execute command: [
+  `which`
+  `cmake`
+]
+[/home/ksu/shirmanovak410-ops/workspace/projects/lab06/projects/lab07]> "which" "cmake"
+/usr/bin/cmake
+Execute command: [
+  `cmake`
+  `--version`
+]
+[/home/ksu/shirmanovak410-ops/workspace/projects/lab06/projects/lab07]> "cmake" "--version"
+cmake version 3.31.6
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+Execute command: [
+  `cmake`
+  `-H.`
+  `-B/home/ksu/shirmanovak410-ops/workspace/projects/lab06/projects/lab07/_builds/default`
+  `-DCMAKE_TOOLCHAIN_FILE=/home/ksu/shirmanovak410-ops/workspace/projects/lab06/projects/lab07/tools/polly/default.cmake`
+]
+[/home/ksu/shirmanovak410-ops/workspace/projects/lab06/projects/lab07]> "cmake" "-H." "-B/home/ksu/shirmanovak410-ops/workspace/projects/lab06/projects/lab07/_builds/default" "-DCMAKE_TOOLCHAIN_FILE=/home/ksu/shirmanovak410-ops/workspace/projects/lab06/projects/lab07/tools/polly/default.cmake"
+-- [polly] Used toolchain: Default
+-- The C compiler identification is GNU 14.2.0
+-- The CXX compiler identification is GNU 14.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Configuring done (7.6s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/ksu/shirmanovak410-ops/workspace/projects/lab06/projects/lab07/_builds/default
+Execute command: [
+  `cmake`
+  `--build`
+  `/home/ksu/shirmanovak410-ops/workspace/projects/lab06/projects/lab07/_builds/default`
+  `--`
+]
+[/home/ksu/shirmanovak410-ops/workspace/projects/lab06/projects/lab07]> "cmake" "--build" "/home/ksu/shirmanovak410-ops/workspace/projects/lab06/projects/lab07/_builds/default" "--"
+[  7%] Building CXX object CMakeFiles/print.dir/sources/print.cpp.o
+[ 14%] Linking CXX static library libprint.a
+[ 14%] Built target print
+[ 21%] Building CXX object _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+[ 28%] Linking CXX static library ../../../lib/libgtest.a
+[ 28%] Built target gtest
+[ 35%] Building CXX object _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
+[ 42%] Linking CXX static library ../../../lib/libgtest_main.a
+[ 42%] Built target gtest_main
+[ 50%] Building CXX object CMakeFiles/check.dir/tests/test1.cpp.o
+[ 57%] Linking CXX executable check
+[ 57%] Built target check
+[ 64%] Building CXX object CMakeFiles/demo.dir/demo/main.cpp.o
+[ 71%] Linking CXX executable demo
+[ 71%] Built target demo
+[ 78%] Building CXX object _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
+[ 85%] Linking CXX static library ../../../lib/libgmock.a
+[ 85%] Built target gmock
+[ 92%] Building CXX object _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
+[100%] Linking CXX static library ../../../lib/libgmock_main.a
+[100%] Built target gmock_main
+Execute command: [
+  `ctest`
+]
+[/home/ksu/shirmanovak410-ops/workspace/projects/lab06/projects/lab07/_builds/default]> "ctest"
+Test project /home/ksu/shirmanovak410-ops/workspace/projects/lab06/projects/lab07/_builds/default
+    Start 1: check
+1/1 Test #1: check ............................   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 1
+
+Total Test time (real) =   0.00 sec

@@ -1,0 +1,39 @@
+Execute command: [
+  `which`
+  `cmake`
+]
+[/home/ksu/shirmanovak410-ops/workspace/projects/lab06/projects/lab07]> "which" "cmake"
+/usr/bin/cmake
+Execute command: [
+  `cmake`
+  `--version`
+]
+[/home/ksu/shirmanovak410-ops/workspace/projects/lab06/projects/lab07]> "cmake" "--version"
+cmake version 3.31.6
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+Execute command: [
+  `cmake`
+  `--build`
+  `/home/ksu/shirmanovak410-ops/workspace/projects/lab06/projects/lab07/_builds/default`
+  `--`
+]
+[/home/ksu/shirmanovak410-ops/workspace/projects/lab06/projects/lab07]> "cmake" "--build" "/home/ksu/shirmanovak410-ops/workspace/projects/lab06/projects/lab07/_builds/default" "--"
+[ 14%] Built target print
+[ 28%] Built target gtest
+[ 42%] Built target gtest_main
+[ 57%] Built target check
+[ 71%] Built target demo
+[ 85%] Built target gmock
+[100%] Built target gmock_main
+Execute command: [
+  `ctest`
+]
+[/home/ksu/shirmanovak410-ops/workspace/projects/lab06/projects/lab07/_builds/default]> "ctest"
+Test project /home/ksu/shirmanovak410-ops/workspace/projects/lab06/projects/lab07/_builds/default
+    Start 1: check
+1/1 Test #1: check ............................   Passed    0.01 sec
+
+100% tests passed, 0 tests failed out of 1
+
+Total Test time (real) =   0.01 sec
