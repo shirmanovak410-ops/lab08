@@ -1,7 +1,7 @@
 # Lab08 
 В рамках выполнения данной лабораторной работы мною были выполнены команды из tutorial с некоторыми изменениями:
 1) Скопирован репозиторий из lab07.
-```bash
+```bash 
 $ git clone https://github.com/${GITHUB_USERNAME}/lab07 lab08
 Клонирование в «lab08»...
 remote: Enumerating objects: 173, done.
