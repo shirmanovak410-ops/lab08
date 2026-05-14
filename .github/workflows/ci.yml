@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Build Docker image
+      run: docker build -t logger .
+    
+    - name: Test container
+      run: |
+        rm -rf logs
+        mkdir logs
+        echo "CI test message" | docker run -i -v $(pwd)/logs:/home/logs/ logger
+        cat logs/log.txt
