@@ -160,3 +160,19 @@ text3
 5) В ci.yml добавлена часть кода про docker
 ```cmake
 ...
+ docker:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Build Docker image
+      run: docker build -t logger .
+    
+    - name: Test Docker container
+      run: |
+        mkdir logs
+        echo "Hello from Docker CI" | docker run -i -v $(pwd)/logs:/home/logs/ logger
+        cat logs/log.txt
+```
+
+6) Изменения в ci.yml и Dockerfile запушены в репозиторий
