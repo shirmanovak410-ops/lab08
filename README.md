@@ -161,7 +161,16 @@ text3
 5) В ci.yml добавлена часть кода про docker
 ```cmake
 ...
- docker:
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -169,10 +178,11 @@ text3
     - name: Build Docker image
       run: docker build -t logger .
     
-    - name: Test Docker container
+    - name: Test container
       run: |
+        rm -rf logs
         mkdir logs
-        echo "Hello from Docker CI" | docker run -i -v $(pwd)/logs:/home/logs/ logger
+        echo "CI test message" | docker run -i -v $(pwd)/logs:/home/logs/ logger
         cat logs/log.txt
 ```
 
