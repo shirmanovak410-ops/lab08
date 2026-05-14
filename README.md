@@ -1,3 +1,4 @@
+[![CI](https://github.com/shirmanovak410-ops/lab08/actions/workflows/ci.yml/badge.svg)](https://github.com/shirmanovak410-ops/lab08/actions/workflows/ci.yml)
 # Lab08 
 В рамках выполнения данной лабораторной работы мною были выполнены команды из tutorial с некоторыми изменениями:
 1) Скопирован репозиторий из lab07.
