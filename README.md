@@ -12,7 +12,7 @@ remote: Total 173 (delta 58), reused 160 (delta 51), pack-reused 0 (from 0)
 Получение объектов: 100% (173/173), 45.43 КиБ | 912.00 КиБ/с, готово.
 Определение изменений: 100% (58/58), готово.
 ```
-3) Написан Dockerfile:
+2) Написан Dockerfile:
 ```dockerfile
 $ cat > Dockerfile << 'EOF'
 > FROM ubuntu:22.04
@@ -39,6 +39,7 @@ ENTRYPOINT ./demo
 EOF
 ```
 Версия 18:04 заменена на 22:04 для совместимости в FetchContent
+
 3) Произведена сборка Docker-образа
 ```bash
 $ sudo docker build --no-cache -t logger .
